@@ -48,15 +48,15 @@
 
     <RadioGroup
         android:id="@+id/qytetet"
-        android:layout_width="378dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
         android:orientation="horizontal"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126">
+        app:layout_constraintVertical_bias="0.179">
 
         <RadioButton
 
@@ -65,117 +65,59 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:onClick="onRadioButtonClicked"
-            android:text="Durres" />
+            android:text="Durres"
+            android:textAlignment="center" />
 
         <RadioButton
             android:id="@+id/radio_vlore"
-            android:layout_width="wrap_content"
+            android:layout_width="76dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:onClick="onRadioButtonClicked"
-            android:text="Vlore" />
+            android:text="Vlore"
+            android:textAlignment="center" />
 
         <RadioButton
             android:id="@+id/radio_lac"
-            android:layout_width="wrap_content"
+            android:layout_width="64dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:onClick="onRadioButtonClicked"
-            android:text="Lac" />
+            android:text="Lac"
+            android:textAlignment="center" />
 
         <RadioButton
             android:id="@+id/radio_shkoder"
-            android:layout_width="wrap_content"
+            android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:onClick="onRadioButtonClicked"
-            android:text="Shkoder" />
+            android:text="Shkoder"
+            android:textAlignment="center" />
 
         <RadioButton
             android:id="@+id/radio_sarande"
-            android:layout_width="wrap_content"
+            android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:onClick="onRadioButtonClicked"
-            android:text="Sarande" />
+            android:text="Sarande"
+            android:textAlignment="center" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
         android:text="Choose your destination:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08"
-        android:fontFamily="sans-serif-black"/>
+        app:layout_constraintVertical_bias="0.119" />
 
-    <ImageView
-        android:id="@+id/imageViewDurres"
-        android:layout_width="339dp"
-        android:layout_height="387dp"
-        android:layout_marginTop="172dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewLac"
-        android:layout_width="339dp"
-        android:layout_height="387dp"
-        android:layout_marginTop="172dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewVlore"
-        android:layout_width="339dp"
-        android:layout_height="387dp"
-        android:layout_marginTop="172dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewShkoder"
-        android:layout_width="339dp"
-        android:layout_height="387dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewSarande"
-        android:layout_width="339dp"
-        android:layout_height="387dp"
-        android:layout_marginTop="172dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/timeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="popTimePicker"
-        android:text="Select Time Of Departure"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942" />
 
     <Button
         android:id="@+id/purchaseButton"
@@ -188,5 +130,392 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.942" />
+
+    <RadioGroup
+        android:id="@+id/oraretDurres"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29">
+
+        <RadioButton
+            android:id="@+id/durresOrar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="6:30"
+            android:textAlignment="center"
+
+            />
+
+        <RadioButton
+            android:id="@+id/durresOrar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="8:00"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/durresOrar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="11:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/durresOrar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="14:00"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/durresOrar5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="16:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/durresOrar6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="18:00"
+            android:textAlignment="center" />
+
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/oraretVlore"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29">
+
+        <RadioButton
+            android:id="@+id/vloreOrar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="5:30"
+            android:textAlignment="center"
+
+            />
+
+        <RadioButton
+            android:id="@+id/vloreOrar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="7:00"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/vloreOrar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="10:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/vloreOrar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="13:00"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/vloreOrar5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="15:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/vloreOrar6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="17:00"
+            android:textAlignment="center" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/oraretLac"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29">
+
+        <RadioButton
+            android:id="@+id/lacOrar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="6:30"
+            android:textAlignment="center"
+
+            />
+
+        <RadioButton
+            android:id="@+id/lacOrar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="8:00"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/lacOrar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="11:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/lacOrar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="13:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/lacOrar5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="16:00"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/lacOrar6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="18:30"
+            android:textAlignment="center" />
+
+    </RadioGroup>
+    <RadioGroup
+        android:id="@+id/oraretShkoder"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29">
+
+        <RadioButton
+            android:id="@+id/shkoderOrar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="5:00"
+            android:textAlignment="center"
+
+            />
+
+        <RadioButton
+            android:id="@+id/shkoderOrar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="7:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/shkoderOrar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="9:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/shkoderOrar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="12:00"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/shkoderOrar5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="14:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/shkoderOrar6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="17:00"
+            android:textAlignment="center" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/oraretSarande"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29">
+
+        <RadioButton
+            android:id="@+id/sarandeOrar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="6:30"
+            android:textAlignment="center"
+
+            />
+
+        <RadioButton
+            android:id="@+id/sarandeOrar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="8:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/sarandeOrar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="11:00"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/sarandeOrar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="14:00"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/sarandeOrar5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="17:30"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/sarandeOrar6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:fontFamily="sans-serif-black"
+            android:onClick="onRadioButtonClicked"
+            android:text="20:00"
+            android:textAlignment="center" />
+    </RadioGroup>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
