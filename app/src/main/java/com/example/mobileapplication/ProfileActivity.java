@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,7 +38,6 @@ public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private Button purchase;
     private ProgressBar progressBar;
-
     private String userID;
 
     private Button logout;
@@ -61,15 +61,43 @@ public class ProfileActivity extends AppCompatActivity {
         purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (cityName == null) {
+                    Toast.makeText(ProfileActivity.this, "Please Select City Name", Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(getApplicationContext(), Profile1.class);
+                }
+                else if (cityTime == null) {
+                    Toast.makeText(ProfileActivity.this, "Please Select the time of departure", Toast.LENGTH_LONG).show();
 
-                intent.putExtra("qyteti", cityName);
-                intent.putExtra("ora", cityTime);
-                intent.putExtra("cmimi", price);
-                startActivity(intent);
+                }else {
+                    AlertDialog dialog;
+                    AlertDialog.Builder builder;
+                    builder = new AlertDialog.Builder(ProfileActivity.this);
+                    builder.setTitle("Are you sure you want to purchase a ticket to " + cityName + " at " + cityTime + " for "+ price + "leke");
+                    builder.setPositiveButton("Purchase", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent intent = new Intent(getApplicationContext(), Profile1.class);
+
+                            intent.putExtra("qyteti", cityName);
+                            intent.putExtra("ora", cityTime);
+                            intent.putExtra("cmimi", price);
+                            startActivity(intent);
+                        }
+                    });
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    dialog = builder.create();
+                    dialog.show();
+                }
             }
         });
+
+
+
 
 
         logout = (Button) findViewById(R.id.signOut);
