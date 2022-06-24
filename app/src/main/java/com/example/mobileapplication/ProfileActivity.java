@@ -122,7 +122,7 @@ public class ProfileActivity extends AppCompatActivity {
                 User userProfile = snapshot.getValue(User.class);
                 if (userProfile != null) {
                     String fullName = userProfile.fullName;
-                    greetingTextView.setText("Welcome");
+                    greetingTextView.setText("Welcome ");
                     fullNameTextView.setText(fullName + "!");
                 }
             }
