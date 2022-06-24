@@ -1,6 +1,3 @@
-```
-//Might add some proper features in the future
-```
 # MyBus
 
 MyBus is a ticket booking mobile app for the South and North Albania Bus Terminal.
@@ -9,12 +6,157 @@ MyBus is a ticket booking mobile app for the South and North Albania Bus Termina
 
 Clone it on your Android Studio ->File -> New -> Project From Version Control
 
-```bash
+```
 https://github.com/Parisxhetani/MyBus.git
 ```
 Then run the app after it completes loading.
 
-## Usage/Example
+## `Register User`
+```java
+ private void registerUser() {
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+        String fullName = editTextFullName.getText().toString().trim();
+        String age = editTextAge.getText().toString().trim();
+
+        if(fullName.isEmpty()){
+            editTextFullName.setError("Full name is required!");
+            editTextFullName.requestFocus();
+            return;
+        }
+        if(age.isEmpty()){
+            editTextAge.setError("Age is required!");
+            editTextAge.requestFocus();
+            return;
+        }
+        if(email.isEmpty()){
+            editTextEmail.setError("Email is required!");
+            editTextEmail.requestFocus();
+            return;
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            editTextEmail.setError("Please provide valid email!");
+            editTextEmail.requestFocus();
+            return;
+        }
+
+        if(password.isEmpty()){
+            editTextPassword.setError("Password is required!");
+            editTextPassword.requestFocus();
+            return;
+        }
+        if(password.length() < 6){
+            editTextPassword.setError("Min password length should be 6 characters!");
+            editTextPassword.requestFocus();
+            return;
+        }
+
+       progressBar.setVisibility(View.VISIBLE);
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            User user = new User(fullName, age, email);
+
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(RegisterUser.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
+                                    }else{
+                                        Toast.makeText(RegisterUser.this, "Failed to register! Try Again!", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+                                }
+                            });
+                        }else{
+                            Toast.makeText(RegisterUser.this, "Failed to register!", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+    }
+```
+## `User Login `
+```java
+private void userLogin() {
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+
+        if(email.isEmpty()){
+            editTextEmail.setError("Email is required!");
+            editTextEmail.requestFocus();
+            return;
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            editTextEmail.setError("Please enter a valid email!");
+            return;
+        }
+        if(password.isEmpty()){
+            editTextPassword.setError("Password is required!");
+            editTextPassword.requestFocus();
+            return;
+        }
+        if(password.length() < 6){
+            editTextPassword.setError("Password must have more than 6 characters!");
+            editTextPassword.requestFocus();
+            return;
+        }
+        progressBar.setVisibility(View.VISIBLE);
+
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                if (task.isSuccessful()) {
+                    //redirect to user profile
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                } else {
+                    Toast.makeText(MainActivity.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            }
+        });
+
+    }
+```
+## `Reset User Password`
+```java
+ private void resetPassword() {
+        String email = emailEditText.getText().toString().trim();
+
+        if(email.isEmpty()){
+             emailEditText.setError("Email is required!");
+             emailEditText.requestFocus();
+             return;
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            emailEditText.setError("Please provide valid email!");
+            emailEditText.requestFocus();
+            return;
+        }
+        progressBar.setVisibility(View.VISIBLE);
+        auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(ForgotPassword.this, "Check your email to reset your password", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }else{
+                    Toast.makeText(ForgotPassword.this, "Try Again! Something wrong happened!", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            }
+        });
+    }
+```
+
+## `Usage/Purpose`
 
 ```java
 import MyBus
