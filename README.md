@@ -1,6 +1,6 @@
 # MyBus
 
-MyBus is a ticket booking mobile app for the South and North Albania Bus Terminal.
+MyBus is a ticket booking mobile app for the South and North Albania Bus Terminal in Tirana.
 
 ## Installation
 
